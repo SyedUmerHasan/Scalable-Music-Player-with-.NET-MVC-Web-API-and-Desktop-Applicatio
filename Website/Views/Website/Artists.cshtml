@@ -1,0 +1,373 @@
+﻿
+@model IEnumerable<Website.Models.Artist>
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- Begin Head -->
+
+<head>
+    <title>Artists</title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="description" content="Music">
+    <meta name="keywords" content="">
+    <meta name="author" content="kamleshyadav">
+    <meta name="MobileOptimized" content="320">
+    <!--Start Style -->
+    <link rel="stylesheet" type="text/css" href="/Content/musicplayer/css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="/Content/musicplayer/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/Content/musicplayer/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/Content/musicplayer/js/plugins/swiper/css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="/Content/musicplayer/js/plugins/nice_select/nice-select.css">
+    <link rel="stylesheet" type="text/css" href="/Content/musicplayer/js/plugins/player/volume.css">
+    <link rel="stylesheet" type="text/css" href="/Content/musicplayer/js/plugins/scroll/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" type="text/css" href="/Content/musicplayer/css/style.css">
+    <!-- Favicon Link -->
+    <link rel="shortcut icon" type="image/png" href="/Content/musicplayer/images/favicon.png">
+</head>
+<body>
+    <!----Loader---->
+    <div class="ms_inner_loader">
+        <div class="ms_loader">
+            <div class="ms_bars">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </div>
+    <!----Main Wrapper Start---->
+    <div class="ms_main_wrapper">
+        <!---Side Menu Start--->
+        @Html.Partial("sidebar_music")
+        <!---Main Content Start--->
+        <div class="ms_content_wrapper padder_top80">
+            <!---Header--->
+            @Html.Partial("header_music")
+            <!---Featured Artists Music--->
+            <div class="ms_featured_slider padder_top20">
+                <div class="ms_heading">
+                    <h1>Featured Artists</h1>
+                    <span class="veiw_all"><a href="#">view more</a></span>
+                </div>
+                <div class="ms_relative_inner">
+                    <div class="ms_feature_slider swiper-container">
+                        <div class="swiper-wrapper" id="adding_artists">
+
+                        </div>
+                    </div>
+                    <!-- Add Arrows -->
+                    <div class="swiper-button-next1 slider_nav_next"></div>
+                    <div class="swiper-button-prev1 slider_nav_prev"></div>
+                </div>
+            </div>
+            <!----Top Artist Section---->
+            <div class="ms_top_artist">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="ms_heading">
+                                <h1>Top Artists</h1>
+                            </div>
+                        </div>
+                        @foreach (var item in Model)
+                        {
+                            <div class="col-lg-2 col-md-6">
+                                <div class="ms_rcnt_box marger_bottom30">
+                                    <div class="ms_rcnt_box_img">
+                                        <img src="@Html.DisplayFor(modelItem => item.Artist_Image_Url)" alt="" class="img-fluid">
+                                        <div class="ms_main_overlay">
+                                            <div class="ms_box_overlay"></div>
+                                            <div class="ms_more_icon">
+                                                <img src="/Content/musicplayer/images/svg/more.svg" alt="">
+                                            </div>
+                                            <ul class="more_option">
+                                                <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
+                                                <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
+                                                <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Download Now</a></li>
+                                                <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
+                                                <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
+                                            </ul>
+                                            <div class="ms_play_icon">
+                                                <img src="/Content/musicplayer/images/svg/play.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ms_rcnt_box_text">
+                                        <h3><a href="artist_single.html">@Html.DisplayFor(modelItem => item.Artist_Name)</a></h3>
+                                    </div>
+                                </div>
+                            </div>
+
+                        }
+                    </div>
+                </div>
+            </div>
+            <!----Live Radio Section Start---->
+            <!----Main div close---->
+        </div>
+        <!----Footer Start---->
+        @Html.Partial("footer_music")
+        <!----Audio Player Section---->
+        @Html.Partial("player_music")
+    </div>
+    <!----Register Modal Start---->
+    <!-- Modal -->
+    @Html.Partial("register_music")
+    <!----Language Selection Modal---->
+    @Html.Partial("language_music")
+    <!----Queue Clear Model ---->
+    @Html.Partial("queue_clear")
+    <!----Queue Save Modal---->
+    @Html.Partial("queue_save")
+    <!--Main js file Style-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        var add_artist = async (response) => {
+            response.forEach(eachResponse => {
+                document.getElementById("adding_artists").innerHTML += `
+                        <div class="swiper-slide">
+                            <div class="ms_rcnt_box">
+                                <div class="ms_rcnt_box_img">
+                                    <img src="` + eachResponse.Artist_Image_Url + `" alt="">
+                                    <div class="ms_main_overlay">
+                                        <div class="ms_box_overlay"></div>
+                                        <div class="ms_more_icon">
+                                            <img src="/Content/musicplayer/images/svg/more.svg" alt="">
+                                        </div>
+                                        <ul class="more_option">
+                                            <li>
+                                                <a href="#">
+                                                    <span class="opt_icon">
+                                                        <span class="icon icon_fav"></span>
+                                                    </span>Add To Favourites
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span class="opt_icon">
+                                                        <span class="icon icon_queue"></span>
+                                                    </span>Add To Queue
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span class="opt_icon">
+                                                        <span class="icon icon_dwn"></span>
+                                                    </span>Download Now
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span class="opt_icon">
+                                                        <span class="icon icon_playlst"></span>
+                                                    </span>Add To Playlist
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span class="opt_icon">
+                                                        <span class="icon icon_share"></span>
+                                                    </span>Share
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <div class="ms_play_icon">
+                                            <img src="/Content/musicplayer/images/svg/play.svg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ms_rcnt_box_text">
+                                    <h3>
+                                        <a href="#">` + eachResponse.Artist_Name + `</a>
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                                                            `;
+            })
+        }
+    </script>
+
+    <script>
+
+        $.ajax({
+            type: "GET",
+            url: "/api/ArtistsApi",
+            dataType: "json",
+            success: async function (response) {
+                console.log(response);
+                await add_artist(response);
+            }
+        });
+
+
+    </script>
+    <!--Main js file Style-->
+    <script defer type="text/javascript" src="/Content/musicplayer/js/jquery.js"></script>
+    <script defer type="text/javascript" src="/Content/musicplayer/js/bootstrap.min.js"></script>
+    <script defer type="text/javascript" src="/Content/musicplayer/js/plugins/swiper/js/swiper.min.js"></script>
+    <script defer type="text/javascript" src="/Content/musicplayer/js/plugins/player/jplayer.playlist.min.js"></script>
+    <script defer type="text/javascript" src="/Content/musicplayer/js/plugins/player/jquery.jplayer.min.js"></script>
+    <script defer type="text/javascript" src="/Content/musicplayer/js/plugins/player/audio-player.js"></script>
+    <script defer type="text/javascript" src="/Content/musicplayer/js/plugins/player/volume.js"></script>
+    <script defer type="text/javascript" src="/Content/musicplayer/js/plugins/nice_select/jquery.nice-select.min.js"></script>
+    <script defer type="text/javascript" src="/Content/musicplayer/js/plugins/scroll/jquery.mCustomScrollbar.js"></script>
+    <script defer type="text/javascript" src="/Content/musicplayer/js/custom.js"></script>
+    <script>
+        var myPlayListOtion = '<ul class="more_option"><li><a href="#"><span class="opt_icon" title="Add To Favourites"><span class="icon icon_fav"></span></span></a></li><li><a href="#"><span class="opt_icon" title="Add To Queue"><span class="icon icon_queue"></span></span></a></li><li><a href="#"><span class="opt_icon" title="Download Now"><span class="icon icon_dwn"></span></span></a></li><li><a href="#"><span class="opt_icon" title="Add To Playlist"><span class="icon icon_playlst"></span></span></a></li><li><a href="#"><span class="opt_icon" title="Share"><span class="icon icon_share"></span></span></a></li></ul>';
+        var my_songs = [];
+        $.ajax({
+            type: "GET",
+            url: "/api/SongsApi",
+            dataType: "json",
+            success: async function (response) {
+                response.forEach((x) => {
+                    console.log(x.Song_Id);
+                    my_songs = [...my_songs, {
+                        image: x.Song_Image_Url,
+                        title: x.Song_Name,
+                        artist: "Mushroom Records",
+                        mp3: x.Song_Url,
+                        oga: x.Song_Url,
+                        option: myPlayListOtion
+                    }]
+                });
+                console.log(await my_songs);
+            }
+        });
+
+        $(async function () {
+            "use strict";
+            if ($('.audio-player').length) {
+
+                console.log(await my_songs);
+                var myPlaylist = new jPlayerPlaylist({
+                    jPlayer: "#jquery_jplayer_1",
+                    cssSelectorAncestor: "#jp_container_1"
+                }, await my_songs, {
+                        swfPath: "js/plugins",
+                        supplied: "oga, mp3",
+                        wmode: "window",
+                        useStateClassSkin: true,
+                        autoBlur: false,
+                        smoothPlayBar: true,
+                        keyEnabled: true,
+                        playlistOptions: {
+                            autoPlay: false
+                        }
+                    });
+                $("#jquery_jplayer_1").on($.jPlayer.event.ready + ' ' + $.jPlayer.event.play, function (event) {
+                    var current = myPlaylist.current;
+                    var playlist = myPlaylist.playlist;
+                    $.each(playlist, function (index, obj) {
+                        if (index == current) {
+                            $(".jp-now-playing").html("<div class='jp-track-name'><span class='que_img'><img src='" + obj.image + "'></span><div class='que_data'>" + obj.title + " <div class='jp-artist-name'>" + obj.artist + "</div></div></div>");
+                        }
+                    });
+                    $('.knob-wrapper').mousedown(function () {
+                        $(window).mousemove(function (e) {
+                            var angle1 = getRotationDegrees($('.knob')),
+                                volume = angle1 / 270
+
+                            if (volume > 1) {
+                                $("#jquery_jplayer_1").jPlayer("volume", 1);
+                            } else if (volume <= 0) {
+                                $("#jquery_jplayer_1").jPlayer("mute");
+                            } else {
+                                $("#jquery_jplayer_1").jPlayer("volume", volume);
+                                $("#jquery_jplayer_1").jPlayer("unmute");
+                            }
+                        });
+
+                        return false;
+                    }).mouseup(function () {
+                        $(window).unbind("mousemove");
+                    });
+
+
+                    function getRotationDegrees(obj) {
+                        var matrix = obj.css("-webkit-transform") ||
+                            obj.css("-moz-transform") ||
+                            obj.css("-ms-transform") ||
+                            obj.css("-o-transform") ||
+                            obj.css("transform");
+                        if (matrix !== 'none') {
+                            var values = matrix.split('(')[1].split(')')[0].split(',');
+                            var a = values[0];
+                            var b = values[1];
+                            var angle = Math.round(Math.atan2(b, a) * (180 / Math.PI));
+                        } else { var angle = 0; }
+                        return (angle < 0) ? angle + 360 : angle;
+                    }
+
+
+
+
+
+                    var timeDrag = false;
+                    $('.jp-play-bar').mousedown(function (e) {
+                        timeDrag = true;
+                        updatebar(e.pageX);
+
+                    });
+                    $(document).mouseup(function (e) {
+                        if (timeDrag) {
+                            timeDrag = false;
+                            updatebar(e.pageX);
+                        }
+                    });
+                    $(document).mousemove(function (e) {
+                        if (timeDrag) {
+                            updatebar(e.pageX);
+                        }
+                    });
+                    var updatebar = function (x) {
+                        var progress = $('.jp-progress');
+                        var position = x - progress.offset().left;
+                        var percentage = 100 * position / progress.width();
+                        if (percentage > 100) {
+                            percentage = 100;
+                        }
+                        if (percentage < 0) {
+                            percentage = 0;
+                        }
+                        $("#jquery_jplayer_1").jPlayer("playHead", percentage);
+                        $('.jp-play-bar').css('width', percentage + '%');
+                    };
+                    $('#playlist-toggle, #playlist-text, #playlist-wrap li a').unbind().on('click', function () {
+                        $('#playlist-wrap').fadeToggle();
+                        $('#playlist-toggle, #playlist-text').toggleClass('playlist-is-visible');
+                    });
+                    $('.hide_player').unbind().on('click', function () {
+                        $('.audio-player').toggleClass('is_hidden');
+                        $(this).html($(this).html() == '<i class="fa fa-angle-down"></i> HIDE' ? '<i class="fa fa-angle-up"></i> SHOW PLAYER' : '<i class="fa fa-angle-down"></i> HIDE');
+                    });
+                    $('body').unbind().on('click', '.audio-play-btn', function () {
+                        $('.audio-play-btn').removeClass('is_playing');
+                        $(this).addClass('is_playing');
+                        var playlistId = $(this).data('playlist-id');
+                        myPlaylist.play(playlistId);
+                    });
+
+                });
+            }
+        });
+
+    </script>
+</body>
+</html>

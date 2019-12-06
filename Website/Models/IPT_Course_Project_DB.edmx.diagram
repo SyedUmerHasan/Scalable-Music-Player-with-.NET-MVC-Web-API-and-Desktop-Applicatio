@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="be67d2c1df1b4e5e851a10d5f9187350" Name="Diagram1">
+        <EntityTypeShape EntityType="IPT_Course_ProjectModel.Album" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="IPT_Course_ProjectModel.Album_Artist" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IPT_Course_ProjectModel.Artist" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="IPT_Course_ProjectModel.Artist_Album" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="IPT_Course_ProjectModel.Download" Width="1.5" PointX="8.25" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="IPT_Course_ProjectModel.Genre" Width="1.5" PointX="3.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="IPT_Course_ProjectModel.Purchase" Width="1.5" PointX="8.25" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="IPT_Course_ProjectModel.RecentlyPlayed" Width="1.5" PointX="8.25" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="IPT_Course_ProjectModel.Song" Width="1.5" PointX="6" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IPT_Course_ProjectModel.sysdiagram" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IPT_Course_ProjectModel.User" Width="1.5" PointX="6" PointY="8.375" IsExpanded="true" />
+        <AssociationConnector Association="IPT_Course_ProjectModel.FK_Artist_Album_Album" ManuallyRouted="false" />
+        <AssociationConnector Association="IPT_Course_ProjectModel.FK_Songs_Album" ManuallyRouted="false" />
+        <AssociationConnector Association="IPT_Course_ProjectModel.FK_Artist_Album_Artist" ManuallyRouted="false" />
+        <AssociationConnector Association="IPT_Course_ProjectModel.FK_Songs_Artist" ManuallyRouted="false" />
+        <AssociationConnector Association="IPT_Course_ProjectModel.FK_Downloads_Songs" ManuallyRouted="false" />
+        <AssociationConnector Association="IPT_Course_ProjectModel.FK_Downloads_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="IPT_Course_ProjectModel.FK_Songs_Genre" ManuallyRouted="false" />
+        <AssociationConnector Association="IPT_Course_ProjectModel.FK_Purchase_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="IPT_Course_ProjectModel.FK_RecentlyPlayed_Songs" ManuallyRouted="false" />
+        <AssociationConnector Association="IPT_Course_ProjectModel.FK_RecentlyPlayed_Users" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

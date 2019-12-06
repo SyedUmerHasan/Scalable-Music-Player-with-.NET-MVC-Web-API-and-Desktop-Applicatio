@@ -1,0 +1,2436 @@
+/*
+@File: Addax Template Styles
+
+* This file contains the styling for the actual tepmlate, this
+is the file you need to edit to change the look of the
+tepmlate.
+
+This files table contents are outlined below>>>>>
+
+*******************************************
+*******************************************
+
+*** - Default CSS
+*** - Prealoader CSS 
+*** - Main Header CSS
+*** - Main Banner CSS
+*** - Video Banner CSS
+*** - Creative Banner CSS
+*** - Particles Banner CSS
+*** - Welcome Area CSS
+*** - About Area CSS
+*** - Who We Are Area CSS
+*** - Strategy Area CSS
+*** - CTR Area CSS
+*** - Skill Area CSS
+*** - Fun Facts Area CSS
+*** - Team Area CSS
+*** - How We Work CSS
+*** - Services Area CSS
+*** - Why We Are Different CSS
+*** - Work Area CSS
+*** - Pricing Area CSS
+*** - FAQ Area CSS
+*** - Testimonials Area CSS
+*** - Blog Area CSS
+*** - Partner Area CSS
+*** - Subscribe Area CSS
+*** - Contact Area CSS
+*** - Page Title CSS
+*** - Blog Details Area CSS
+*** - Footer Area CSS
+*** - Go Top CSS
+*/
+
+
+/*
+==============================
+Default CSS
+==============================
+*/
+$family: unquote("Poppins");
+$font_family: 'Poppins', sans-serif;
+$template_color: #ff2c57;
+@import url('https://fonts.googleapis.com/css?family=#{$family}:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+
+body {
+    padding: 0;
+    margin: 0;
+    background: #111111;
+    font-family: $font_family;
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+	margin-bottom: 0;
+	font-weight: 400;
+	line-height: 1;
+	color: #fff;
+}
+ul {
+    padding-left: 0;
+    margin-bottom: 0;
+    li {
+        list-style: none;
+    }
+}
+:focus {
+    outline: 0 !important;
+}
+p {
+	margin-bottom: 0;
+	font-weight: 300;
+	line-height: 1.8;
+	color: #dddddd;
+}
+a {
+	color: #dddddd;
+	text-decoration: none;
+    transition: .4s;
+    &:hover, &:focus {
+        color: $template_color;
+	    text-decoration: none;
+    }
+}
+img {
+    max-width: 100%;
+}
+.ptb-80 {
+    padding: {
+        bottom: 80px;
+        top: 80px
+    }
+}
+.d-table {
+	width: 100%;
+    height: 100%;
+    &-cell {
+        vertical-align: middle;
+    }
+}
+.bg-222222 {
+    background: #222222;
+}
+/*Btn Btn-Primary*/
+.btn {
+	padding: 9px 25px;
+	font-size: 16px;
+	border-radius: 30px;
+    transition: .4s;
+}
+.btn-primary {
+	color: #ffffff;
+	background-color: $template_color;
+    border-color: $template_color;
+    &:hover, &:focus, &.disabled:hover, &.disabled:focus {
+        color: $template_color;
+	    background-color: #ffffff;
+	    border-color: $template_color;
+    }
+    &:not(:disabled):not(.disabled).active, &:not(:disabled):not(.disabled):active {
+        color: #ffffff;
+	    background-color: $template_color;
+	    border-color: $template_color;
+    }
+    &:not(:disabled):not(.disabled).active:focus, &:not(:disabled):not(.disabled):active:focus {
+        box-shadow: none;
+    }
+    &.focus, &:focus {
+        box-shadow: none;
+    }
+    &.disabled, &:disabled {
+        color: #ffffff;
+        background-color: $template_color;
+        border-color: $template_color;
+        opacity: 1;
+    }
+}
+/* Section Title */
+.section-title {
+	margin-bottom: 60px;
+	padding-left: 30px;
+    position: relative;
+    &::before, &::after {
+        content: '';
+        position: absolute;
+        width: 3px;
+        height: 100%;
+        left: 10px;
+        top: 0;
+        background: $template_color;
+        transition: .4s;
+    }
+    &::after {
+        left: 0;
+        height: 50%;
+    }
+    &:hover::before {
+        height: 50%;
+    }
+    &:hover::after {
+        height: 100%;
+    }
+    h2 {
+        font: {
+            size: 35px;
+            weight: 200;
+        }
+        margin-bottom: 20px;
+        span {
+            color: $template_color;
+            font-weight: 600;
+        }
+    }
+    p {
+        max-width: 635px;
+        margin-top: -7px;
+    }
+    h4 {
+        font: {
+            size: 18px;
+            weight: 300;
+        }
+        color: $template_color;
+        margin-bottom: 17px;
+        text-transform: capitalize;
+    }
+}
+/* Form Control */
+.form-control {
+	height: 45px;
+	padding: 10px;
+	font-size: 15px;
+	background-color: #ffffff;
+	border: 1px solid #eeeeee;
+    border-radius: 0;
+    &:focus {
+        border-color: #dddddd;
+	    outline: 0;
+	    box-shadow: none;
+    }
+}
+/* Owl Carousel Button */
+.owl-theme {
+    .owl-controls {
+        margin-top: 50px;
+        line-height: 0;
+    }
+    .owl-nav {
+        margin-top: 0;
+    }
+    .owl-dots {
+        .owl-dot {
+            span {
+                width: 15px;
+                height: 15px;
+                margin: 0 4px;
+                background: transparent;
+                border-radius: 50%;
+                border: 2px solid #dddddd;
+                transition: .4s;
+            }
+            &.active span {
+                background: #869791;
+                border-radius: 5px;
+                width: 35px;
+                height: 10px;
+                border-color: $template_color;
+                background: $template_color;
+            }
+            &:hover span {
+                background: $template_color;
+                border-color: $template_color;
+            }
+        }
+    }
+    .owl-nav {
+        [class*="owl-"] {
+            position: absolute;
+            left: 40px;
+            top: 50%;
+            margin-top: -20px;
+            background: rgba(255,255,255,0.33);
+            width: 60px;
+            text-align: center;
+            height: 60px;
+            line-height: 54px;
+            border-radius: 50%;
+            font-size: 30px;
+            color: #ffffff;
+            transition: .4s;
+            &:hover {
+                background: $template_color;
+	            color: #ffffff;
+            }
+        }
+        .owl-next {
+            left: auto;
+            right: 40px;
+        }
+    }
+}
+
+/*
+==============================
+Preloader CSS
+==============================
+*/
+.preloader {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: #ffffff;
+    z-index: 99999;
+
+    .folding-cube {
+        left: 0;
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        transform: rotateZ(45deg);
+        top: 50%;
+        right: 0;
+        margin: -60px auto 0;
+
+        .cube {
+            float: left;
+            width: 50%;
+            height: 50%;
+            position: relative;
+            transform: scale(1.1);
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: $template_color;
+                animation: sk-foldCubeAngle 2.4s infinite linear both;
+                transform-origin: 100% 100%;
+            }
+        }
+        .cube2 {
+            transform: scale(1.1) rotateZ(90deg);
+
+            &::before {
+                animation-delay: 0.3s;
+            }
+        }
+        .cube3 {
+            transform: scale(1.1) rotateZ(180deg);
+
+            &::before {
+                animation-delay: 0.6s;
+            }
+        }
+        .cube4 {
+            transform: scale(1.1) rotateZ(270deg);
+
+            &::before {
+                animation-delay: 0.9s;
+            }
+        }
+    }
+}
+@-webkit-keyframes sk-foldCubeAngle {
+	0%, 10% {
+		transform: perspective(140px) rotateX(-180deg);
+		opacity: 0; 
+	} 
+	25%, 75% {
+		transform: perspective(140px) rotateX(0deg);
+		opacity: 1; 
+	} 
+	90%, 100% {
+		transform: perspective(140px) rotateY(180deg);
+		opacity: 0; 
+	} 
+}
+@keyframes sk-foldCubeAngle {
+	0%, 10% {
+		transform: perspective(140px) rotateX(-180deg);
+		opacity: 0; 
+	} 
+	25%, 75% {
+		transform: perspective(140px) rotateX(0deg);
+		opacity: 1; 
+	} 
+	90%, 100% {
+		transform: perspective(140px) rotateY(180deg);
+		opacity: 0; 
+	}
+}
+
+/*
+==============================
+Main Header CSS
+==============================
+*/
+.navbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 2;
+	background: transparent !important;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.header-sticky.is-sticky {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 999;
+	box-shadow: 0 8px 6px -6px rgba(0,0,0,.4);
+	animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background: #000000 !important;
+}
+.navbar-light {
+    .navbar-brand {
+        color: #ffffff;
+        font-weight: 600;
+        text-transform: uppercase;
+
+        span {
+            color: $template_color;
+            font: {
+                size: 35px;
+                weight: 700;
+            }
+            text-transform: lowercase;
+        }
+        &:focus, &:hover {
+            color: #ffffff;
+        }
+    }
+    .navbar-nav {
+        .nav-item {
+            padding-right: 15px;
+            padding-left: 15px;
+
+            &:last-child {
+                padding-right: 0;
+            }
+
+            .nav-link {
+                color: #ffffff;
+                padding-right: 0;
+                padding-left: 0;
+                &.active, &.show, &:hover, &:focus {
+                    color: $template_color;
+                }
+            }
+        }
+
+        .active, &.show {
+            .nav-link {
+                color: $template_color;
+            }
+        }
+    }
+    &.header-sticky.is-sticky {
+        .navbar-brand {
+            color: #ffffff;
+        }
+        .navbar-nav {
+            .nav-link {
+                color: #ffffff;
+                padding-right: 0;
+                padding-left: 0;
+                &.active, &.show, &:hover, &:focus {
+                    color: $template_color;
+                }
+            }
+            .active, .show {
+                .nav-link {
+                    color: $template_color;
+                }
+            }
+        }
+    }
+}
+
+/*
+==============================
+Main Banner CSS
+==============================
+*/
+.main-banner {
+	height: 750px;
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: relative;
+    overflow: hidden;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: #000000;
+        opacity: .77;
+    }
+}
+.item-bg-one {
+	background-image: url(../../assets/img/main-bg-1.jpg);
+}
+.item-bg-two {
+	background-image: url(../../assets/img/main-bg-2.jpg);
+}
+.item-bg-three {
+	background-image: url(../../assets/img/main-bg-3.jpg);
+}
+.main-banner-text {
+    text-align: center;
+    h4 {
+        color: #ffffff;
+        font: {
+            weight: 200;
+            size: 24px;
+        }
+        letter-spacing: 1px;
+    }
+    h1 {
+        color: #ffffff;
+        font: {
+            size: 55px;
+            weight: 200;
+        }
+        margin: {
+            top: 25px;
+            bottom: 30px;
+        }
+        letter-spacing: 2px;
+        span {
+            color: #ff2c57;
+            font-weight: 600;
+        }
+    }
+    p {
+        color: #ffffff;
+        max-width: 730px;
+        margin: auto;
+        margin-bottom: 30px;
+    }
+    .btn {
+        &:hover, &:focus {
+            border-color: #ffffff;
+        }
+    }
+    .view-work {
+        background: transparent;
+        border-color: #fff;
+        margin-left: 10px;
+
+        &:hover, &:focus {
+            border-color: $template_color;
+            background: $template_color;
+            color: #ffffff;
+        }
+    }
+}
+.home-slides {
+    .owl-controls {
+        margin-top: 0;
+    }
+}
+
+/*
+==============================
+Video Banner CSS
+==============================
+*/
+.video-background {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: auto;
+	height: auto;
+	min-height: 100%;
+	min-width: 100%;
+	z-index: -100;
+}
+
+/*
+==============================
+Creative Banner CSS
+==============================
+*/
+.creative-banner-one {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	border-width: 10rem 100vw 0 0;
+	border-color: transparent #111111 #111111 transparent;
+	border-style: solid;
+}
+.creative-banner-two {
+	position: relative;
+	top: 100%;
+	width: 100%;
+    height: 0;
+    &::before {
+        content: "";
+        border-right: 50vw solid #111111;
+        border-top: 160px solid transparent;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        height: 0;
+        width: 0;
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        border-left: 50vw solid #111111;
+        border-top: 160px solid transparent;
+        bottom: 0;
+        height: 0;
+        left: 0;
+        width: 0;
+    }
+}
+.creative-banner-three {
+	position: relative;
+	top: 100%;
+	width: 100%;
+    height: 0;
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: -25px;
+        left: 0;
+        width: 100%;
+        background-image: url(../../assets/img/shape.png);
+        height: 150px;
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}
+
+/*
+==============================
+Particles Banner CSS
+==============================
+*/
+#particles-js {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+#particles-js-two {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+/*
+==============================
+Welcome Area CSS
+==============================
+*/
+.single-box {
+	text-align: center;
+	box-shadow: 0 0 30px 0 rgba(67, 67, 67, 0.15);
+	padding: 30px 20px;
+    position: relative;
+    overflow: hidden;
+    transition: .4s;
+    &:hover {
+        box-shadow: unset;
+        transform: translateX(5px);
+    }
+    .icon {
+        color: $template_color;
+        font-size: 45px;
+    }
+    h3 {
+        margin: {
+            top: 25px;
+            bottom: 20px;
+        }
+        font: {
+            weight: 600;
+            size: 20px;
+        }
+    }
+    a {
+        position: absolute;
+        right: -20px;
+        bottom: -20px;
+        width: 45px;
+        height: 40px;
+        line-height: 44px;
+        text-align: center;
+        box-shadow: 0px 0px 25px 0px rgba(0, 27, 103, 0.3);
+        border-radius: 50% 0 0 0;
+        opacity: 0;
+        visibility: hidden;
+    }
+    &:hover a {
+        background: $template_color;
+        color: #ffffff;
+        opacity: 1;
+        visibility: visible;
+        right: 0;
+        bottom: 0;
+    }
+}
+
+/*
+==============================
+About Area CSS
+==============================
+*/
+.about-area {
+	background-image: url(../../assets/img/patt.png);
+	background-position: center center;
+}
+.about-video {
+    position: relative;
+    .video-btn {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        text-align: center;
+        margin-top: -26px;
+        a {
+            color: #ffffff;
+            display: inline-block;
+            width: 70px;
+            height: 70px;
+            line-height: 72px;
+            background: $template_color;
+            position: relative;
+            font-size: 30px;
+            border-radius: 50%;
+            &::before, &::after {
+                content: "";
+                position: absolute;
+                z-index: 0;
+                left: 50%;
+                top: 50%;
+                transform: translateX(-50%) translateY(-50%);
+                display: block;
+                width: 88px;
+                height: 88px;
+                border-radius: 50%;
+                transition: all 200ms;
+                animation: pulse-border 1500ms ease-out infinite;
+                border: 10px solid #fff;
+            }
+            &::after {
+                width: 70px;
+                height: 70px;
+                transition: all 200ms;
+            }
+        }
+    }
+}
+@-webkit-keyframes pulse-border {
+	0% {
+		-webkit-transform:translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+		transform:translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+		opacity:1;
+	}
+	100% {
+		-webkit-transform:translateX(-50%) translateY(-50%) translateZ(0) scale(1.2);
+		transform:translateX(-50%) translateY(-50%) translateZ(0) scale(1.2);
+		opacity:0;
+	}
+}
+@keyframes pulse-border {
+	0% {
+		-webkit-transform:translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+		transform:translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+		opacity:1;
+	}
+	100% {
+		-webkit-transform:translateX(-50%) translateY(-50%) translateZ(0) scale(1.2);
+		transform:translateX(-50%) translateY(-50%) translateZ(0) scale(1.2);
+		opacity:0;
+	}
+}
+.about-addax {
+    margin-top: 12px;
+    .section-title {
+        margin-bottom: 20px;
+        padding-left: 0;
+        &::before, &::after {
+            display: none;
+        }
+        h2 {
+            font-size: 25px;
+        }
+    }
+    ul {
+        margin-bottom: 30px;
+        li {
+            margin-bottom: 10px;
+            font-weight: 300;
+            color: #dddddd;
+            i {
+                color: $template_color;
+                margin-right: 5px;
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+    .pull-left {
+        margin-right: 45px;
+    }
+}
+
+/*
+==============================
+Who We Are Area CSS
+==============================
+*/
+.who-we-are {
+	padding-bottom: 50px;
+}
+.single-who-we-are {
+	border-radius: 5px;
+    margin-bottom: 30px;
+	position: relative;
+	overflow: hidden;
+    box-shadow: 0 20px 40px 0 rgba(28, 30, 35, 0.2);
+	background: #0F0F0F;
+	padding: 50px 30px;
+    transition: all 0.5s ease-in-out 0s;
+    &:hover {
+        background: $template_color;
+        color: #ffffff;
+        transform: translateX(5px);
+    }
+    i {
+        font-size: 50px;
+        color: $template_color;
+        transition: .4s;
+    }
+    &:hover i {
+        color: #ffffff
+    }
+    h4 {
+        margin: {
+            bottom: 20px;
+            top: 25px;
+        }
+        font: {
+            size: 22px;
+            weight: 500;
+        }
+    }
+    p {
+        transition: .4s;
+    }
+    &:hover p {
+        color: #ffffff;
+    }
+    span {
+        bottom: 0;
+        color: rgba(0, 0, 0, 0.03);
+        font-size: 200px;
+        line-height: 180px;
+        position: absolute;
+        right: 0;
+        transition: .4s;
+    }
+    &:hover span {
+        color: rgba(255, 255, 255, 0.2);
+    }
+}
+
+/*
+==============================
+Strategy Area CSS
+==============================
+*/
+.strategy-area {
+    position: relative;
+    
+    .image {
+        background: {
+            image: url(../../assets/img/about-strategy.jpg);
+            size: cover;
+            position: center center;
+            repeat: no-repeat;
+        }
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+
+        img {
+            display: none;
+        }
+    }
+}
+.about-strategy {
+    padding-left: 25px;
+    
+    .section-title {
+        margin-bottom: 20px;
+        padding-left: 0;
+        &::before, &::after {
+            display: none;
+        }
+    }
+    ul {
+        margin-bottom: 30px;
+
+        li {
+            margin-bottom: 10px;
+            font-weight: 300;
+            color: #dddddd;
+            &:last-child {
+                margin-bottom: 0;
+            }
+            i {
+                color: $template_color;
+                margin-right: 5px;
+            }
+        }
+    }
+}
+
+/*
+==============================
+CTR Area CSS
+==============================
+*/
+.ctr-area {
+    text-align: center;
+    background-image: url(../../assets/img/ctr-bg.jpg);
+    position: relative;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: #000000;
+        opacity: .88;
+    }
+    .section-title {
+        padding-left: 0;
+
+        &::after, &::before {
+            display: none;
+        }
+        h2 {
+            color: #ffffff;
+            font-weight: 500;
+            margin: {
+                top: 30px;
+                bottom: 30px;
+            }
+        }
+        p {
+            margin: {
+                left: auto;
+                right: auto;
+                bottom: 25px;
+            }
+        }
+    }
+    .view-work {
+        background: transparent;
+        border-color: #ffffff;
+        margin-left: 10px;
+        &:hover, &:focus {
+            border-color: $template_color;
+            background: $template_color;
+            color: #ffffff;
+        }
+    }
+    .btn:hover, .btn:focus {
+        border-color: #ffffff;
+    }
+}
+
+/*
+==============================
+Skill Area CSS
+==============================
+*/
+.about-skill {
+    .section-title {
+        padding-left: 0;
+
+        &::before, &::after {
+            display: none;
+        }
+    }
+    .progress-title {
+        font-size: 17px;
+        margin-bottom: 13px;
+    }
+    .progress {
+        height: 10px;
+        background: #fff;
+        border-radius: 5px;
+        box-shadow: none;
+        margin-bottom: 30px;
+        overflow: visible;
+
+        .progress-bar {
+            box-shadow: none;
+            position: relative;
+            animation: animate-positive 2s;
+            background: $template_color;
+            border-radius: 5px;
+        }
+        .progress-value {
+            font: {
+                size: 15px;
+                weight: 300;
+            }
+            color: #dddddd;
+            position: absolute;
+            top: -29px;
+            right: 0;
+        }
+    }
+}
+@-webkit-keyframes animate-positive{
+    0% { 
+        width: 0; 
+    }
+}
+@keyframes animate-positive{
+    0% { 
+        width: 0; 
+    }
+}
+.skill-video {
+    position: relative;
+
+    .video-btn {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        text-align: center;
+        margin-top: -26px;
+        a {
+            color: #ffffff;
+            display: inline-block;
+            width: 70px;
+            height: 70px;
+            line-height: 72px;
+            background: $template_color;
+            position: relative;
+            font-size: 30px;
+            border-radius: 50%;
+
+            &::before, &::after {
+                content: "";
+                position: absolute;
+                z-index: 0;
+                left: 50%;
+                top: 50%;
+                transform: translateX(-50%) translateY(-50%);
+                display: block;
+                width: 88px;
+                height: 88px;
+                border-radius: 50%;
+                -webkit-transition: all 200ms;
+                transition: all 200ms;
+                animation: pulse-border 1500ms ease-out infinite;
+                border: 10px solid #ffffff;
+            }
+            &::after {
+                width: 70px;
+                height: 70px;
+                transition: all 200ms;
+            }
+        }
+    }
+}
+@-webkit-keyframes pulse-border {
+	0% {
+		-webkit-transform:translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+		transform:translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+		opacity:1;
+	}
+	100% {
+		-webkit-transform:translateX(-50%) translateY(-50%) translateZ(0) scale(1.3);
+		transform:translateX(-50%) translateY(-50%) translateZ(0) scale(1.3);
+		opacity:0;
+	}
+}
+@keyframes pulse-border {
+	0% {
+		-webkit-transform:translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+		transform:translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+		opacity:1;
+	}
+	100% {
+		-webkit-transform:translateX(-50%) translateY(-50%) translateZ(0) scale(1.3);
+		transform:translateX(-50%) translateY(-50%) translateZ(0) scale(1.3);
+		opacity:0;
+	}
+}
+
+/*
+==============================
+Fun Facts Area CSS
+==============================
+*/
+.funFacts-area {
+    background-image: url(../../assets/img/funfact-bg.jpg);
+    position: relative;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: #000000;
+        opacity: .77;
+    }
+}
+.funFact {
+	position: relative;
+    padding-left: 65px;
+    
+    i {
+        font-size: 50px;
+        color: $template_color;
+        position: absolute;
+        left: 0;
+        top: 2px;
+    }
+    .fa.fa-users {
+        left: -10px;
+    }
+    h2 {
+        color: #ffffff;
+        margin-bottom: 5px;
+        font: {
+            size: 45px;
+            weight: 600;
+        }
+    }
+    p {
+        font-size: 18px;
+    }
+}
+
+/*
+==============================
+Team Area CSS
+==============================
+*/
+.our-team {
+	text-align: center;
+    position: relative;
+
+    .team-content {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 92%;
+        background: #111111;
+        margin-left: 15px;
+        padding-top: 20px;
+        z-index: 1;
+        transition: .4s;
+
+        .title {
+            font: {
+                size: 20px;
+                weight: 600;
+            }
+            color: #ffffff;
+            margin-bottom: 6px;
+            transition: .4s;
+        }
+        .post {
+            color: #dddddd;
+            transition: .4s;
+        }
+    }
+    &:hover .team-content {
+        .title {
+            color: #ffffff;
+        }
+        .post {
+            color: #ffffff;
+        }
+    }
+    &:hover .team-content {
+        bottom: 34%;
+        background: transparent;
+    }
+    .social {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to top, rgba(0,0,0,0.9) 20%, rgba(0,0,0,0.3) 80%);
+        transition: .4s;
+        opacity: 0;
+        visibility: hidden;
+        ul {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 50%;
+            margin-top: -50px;
+            transform: translateY(-35px);
+            transition: .4s;
+            li {
+                display: inline-block;
+                a {
+                    width: 35px;
+                    height: 35px;
+                    line-height: 32px;
+                    color: #ffffff;
+                    border: 1px solid #ffffff;
+                    border-radius: 50%;
+                    &:hover {
+                        border-color: $template_color;
+                        background: $template_color;
+                    }
+                }
+            }
+        }
+    }
+    &:hover {
+        .social {
+            opacity: 1;
+            visibility: visible;
+            ul {
+                transform: translateY(0);
+            }
+        }
+    }
+}
+
+/*
+==============================
+How We Work CSS
+==============================
+*/
+.single-how-work {
+	box-shadow: 0 0 30px 0 rgba(67, 67, 67, 0.15);
+	background: #0F0F0F;
+	padding: 35px;
+	border-radius: 5px;
+    transition: all 0.5s ease-in-out 0s;
+    &:hover {
+        transform: translateX(5px);
+    }
+    h3 {
+        color: $template_color;
+        font: {
+            size: 45px;
+            weight: 700;
+        }
+    }
+    h4 {
+        margin: {
+            top: 25px;
+            bottom: 18px;
+        }
+        font-size: 22px;
+    }
+}
+
+/*
+==============================
+Services Area CSS
+==============================
+*/
+.services-area {
+    padding-bottom: 50px;
+    
+    .single-box {
+        margin-bottom: 30px;
+    }
+}
+.single-services {
+	margin-bottom: 30px;
+	box-shadow: 0 0 30px 0 rgba(67, 67, 67, 0.15);
+	text-align: center;
+	position: relative;
+    transition: .4s;
+
+    &:hover {
+        box-shadow: unset;
+        transform: translateX(5px);
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 50px;
+        border-left: 2px solid $template_color;
+        height: 50px;
+        border-bottom: 2px solid $template_color;
+        opacity: 0;
+        transition: .4s;
+    }
+    &:hover::before {
+        opacity: 1;
+        width: 100%;
+        height: 50%;
+    }
+    .services-img {
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: #000000;
+            opacity: .66;
+        }
+        .icon {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            margin-top: -30px;
+        }
+    }
+    i {
+        width: 70px;
+        height: 70px;
+        line-height: 71px;
+        border: 1px solid #ffffff;
+        font-size: 30px;
+        color: #ffffff;
+        border-radius: 50%;
+        transition: .4s;
+    }
+    &:hover i {
+        background: #ffffff;
+        color: $template_color;
+    }
+    .services-content {
+        padding: 30px 25px;
+        position: relative;
+        h3 {
+            font: {
+                size: 22px;
+                weight: 500;
+            }
+            margin-bottom: 18px;
+        }
+    }
+}
+
+/*
+==============================
+Why We Are Different CSS
+==============================
+*/
+.tabset {
+    input[type="radio"] {
+        display: none;
+    }
+    .tab-panel {
+        display: none;
+    }
+    input {
+        &:first-child:checked ~ .tab-panels {
+            .tab-panel {
+                &:first-child {
+                    display: block;
+                }
+            }
+        }
+        &:nth-child(3):checked ~ .tab-panels {
+            .tab-panel {
+                &:nth-child(2) {
+                    display: block;
+                }
+            }
+        }
+        &:nth-child(5):checked ~ .tab-panels {
+            .tab-panel {
+                &:nth-child(3) {
+                    display: block;
+                }
+            }
+        }
+        &:nth-child(7):checked ~ .tab-panels {
+            .tab-panel {
+                &:nth-child(4) {
+                    display: block;
+                }
+            }
+        }
+        &:nth-child(9):checked ~ .tab-panels {
+            .tab-panel {
+                &:nth-child(5) {
+                    display: block;
+                }
+            }
+        }
+        &:nth-child(11):checked ~ .tab-panels {
+            .tab-panel {
+                &:nth-child(6) {
+                    display: block;
+                }
+            }
+        }
+    }
+    label {
+        position: relative;
+        display: inline-block;
+        padding: 15px 32px;
+        margin: {
+            right: 6px;
+            bottom: 0;
+        }
+        color: #ffffff;
+        cursor: pointer;
+        background: transparent;
+        transition: background ease 0.2s;
+        border: 1px solid #dddddd;
+        border-radius: 5px;
+        font-size: 18px;
+    }
+    input:checked + label {
+        border-color: $template_color;
+        background: $template_color;
+        color: #ffffff;
+    }
+}
+.tab-panel {
+    margin-top: 35px;
+
+    .why-we-different-text {
+        h4 {
+            font: {
+                size: 35px;
+                weight: 200;
+            }
+            margin-bottom: 20px;
+        }
+        p {
+            max-width: 635px;
+            margin-top: -7px;
+        }
+        ul {
+            margin: {
+                top: 25px;
+                bottom: 30px;
+            }
+
+            li {
+                margin-bottom: 10px;
+                font-weight: 300;
+                color: #dddddd;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+                i {
+                    color: $template_color;
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+}
+
+/*
+==============================
+Work Area CSS
+==============================
+*/
+.shorting-menu {
+	display: inline-block;
+	box-shadow: 0 0 30px 0 rgba(67, 67, 67, 0.15);
+	padding: 18px 20px;
+	border-radius: 50px;
+    background: #0F0F0F;
+    
+    .filter {
+        border: none;
+        background: #111111;
+        padding: 9px 24px;
+        text-transform: capitalize;
+        font-size: 16px;
+        cursor: pointer;
+        transition: .4s;
+        border-radius: 30px;
+        color: #ffffff;
+        &.active, &:hover {
+            background: $template_color;
+            color: #ffffff;
+        }
+    }
+}
+.shorting {
+    margin-top: 40px;
+
+    .mix {
+        display: none;
+    }
+}
+.single-work {
+	overflow: hidden;
+	position: relative;
+    padding: 5px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 15px;
+        width: 95%;
+        height: 93%;
+        background: #000000;
+        left: 14px;
+        opacity: 0;
+        visibility: hidden;
+        transition: .4s;
+    }
+    &:hover::before {
+        top: 21px;
+        width: 93%;
+        height: 91%;
+        left: 21px;
+        opacity: .66;
+        visibility: visible;
+    }
+    .work-content {
+        position: absolute;
+        bottom: 20px;
+        width: 86%;
+        background: #0F0F0F;
+        left: 40px;
+        text-align: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        opacity: 0;
+        visibility: hidden;
+        transition: .4s;
+        h4 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        ul {
+            li {
+                display: inline-block;
+                font-size: 14px;
+                color: #dddddd;
+            }
+        }
+    }
+    &:hover .work-content {
+        bottom: 35px;
+        opacity: 1;
+        visibility: visible;
+    }
+    .popup-btn {
+        position: absolute;
+        top: 20px;
+        right: 40px;
+        width: 45px;
+        text-align: center;
+        height: 45px;
+        line-height: 46px;
+        border-radius: 50%;
+        color: #ffffff;
+        font-size: 22px;
+        opacity: 0;
+        visibility: hidden;
+        border: 1px solid #ffffff;
+        transition: .4s;
+        &:hover {
+            background: $template_color;
+            border-color: $template_color;
+        }
+    }
+    &:hover .popup-btn {
+        top: 36px;
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+/*
+==============================
+Pricing Area CSS
+==============================
+*/
+.pricingTable {
+	padding: 30px 0;
+	text-align: center;
+	position: relative;
+    background-image: url(../../assets/img/patt.png);
+    background-position: center center;
+	box-shadow: 0 0 30px 0 rgba(67, 67, 67, 0.15);
+    transition: .4s;
+    
+    &:hover {
+        -webkit-transform: translateX(5px);
+        transform: translateX(5px);
+    }
+    &::after {
+        content: "";
+        width: 70px;
+        height: 30px;
+        background: $template_color;
+        margin: 0 auto;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        clip-path: polygon(50% 100%, 0 0, 100% 0);
+    }
+    .title {
+        padding: 20px 0;
+        margin-bottom: 35px;
+        background: $template_color;
+        font-size: 25px;
+        color: #ffffff;
+        text-transform: uppercase;
+    }
+    .price-value {
+        margin-bottom: 25px;
+        color: $template_color;
+        .amount {
+            display: inline-block;
+            font-size: 44px;
+            font-weight: 500;
+        }
+        .month {
+            display: block;
+            font-size: 15px;
+            line-height: 16px;
+            text-transform: capitalize;
+            color: #dddddd;
+            margin-left: 50px;
+        }
+    }
+    .currency {
+        display: inline-block;
+        font-size: 25px;
+        vertical-align: top;
+        margin-top: 6px;
+    }
+    .pricing-content {
+        border: {
+            top: 2px solid #eeeeee;
+            bottom: 2px solid #eeeeee;
+        }
+        margin-bottom: 30px;
+        padding: {
+            top: 25px;
+            bottom: 25px;
+        }
+        li {
+            color: #dddddd;
+            margin-top: 16px;
+            &:first-child {
+                margin-top: 0;
+            }
+            i {
+                color: $template_color;
+                margin-right: 4px;
+            }
+        }
+    }
+}
+
+/*
+==============================
+FAQ Area CSS
+==============================
+*/
+.faq-area .image {
+	background-image: url(../../assets/img/faq-img.jpg);
+	position: absolute;
+	left: 15px;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+.card {
+	background-color: transparent;
+	border-radius: 10px !important;
+	margin-bottom: 6px;
+	border: none;
+    box-shadow: 0 0 30px 0 rgba(67, 67, 67, 0.15);
+
+    .card-header {
+        padding: 0;
+        margin-bottom: 0;
+        border: none;
+        background: transparent;
+        &:first-child {
+            border-radius: 0;
+        }
+        a {
+            display: block;
+            &:hover {
+                background: $template_color;
+            }
+            h5 {
+                font-size: 17px;
+                overflow: hidden;
+                padding: 20px;
+                color: #ffffff;
+                line-height: 16px;
+                background: $template_color;
+            }
+            &.collapsed h5 {
+                color: #ffffff;
+                background: transparent;
+                transition: .4s;
+                &:hover {
+                    color: #ffffff;
+                }
+            }
+            i {
+                float: right;
+                font-size: 16px;
+            }
+            &.collapsed {
+                .fa.fa-plus {
+                    &::before {
+                        content: "\f067";
+                    }
+                }
+            }
+            .fa.fa-plus {
+                &::before {
+                    content: "\f068";
+                }
+            }
+        }
+    }
+    .card-body {
+        line-height: 1.9;
+        background: transparent;
+        color: #dddddd;
+    }
+}
+
+/*
+==============================
+Testimonials Area CSS
+==============================
+*/
+.testimonials-area {
+    padding-bottom: 50px;
+}
+.single-feedback {
+	box-shadow: 0 0 30px 0 rgba(67, 67, 67, 0.15);
+	background-image: url(../../assets/img/patt.png);
+	padding: 30px;
+	margin-bottom: 30px;
+	border-radius: 5px;
+	position: relative;
+    transition: all 0.5s ease-in-out 0s;
+
+    .client-info {
+        position: relative;
+        margin-bottom: 35px;
+        padding: {
+            left: 100px;
+            top: 15px;
+        }
+        .client-pic {
+            max-width: 80px;
+            position: absolute;
+            left: 0;
+            top: 0;
+
+            img {
+                border-radius: 50%;
+            }
+        }
+        .client-title {
+            h4 {
+                font-size: 19px;
+                font-weight: 500;
+                transition: .4s;
+            }
+            h5 {
+                font-size: 15px;
+                margin-top: 13px;
+                color: #666666;
+                transition: .4s;
+            }
+        }
+    }
+    p {
+        transition: .4s;
+    }
+    span {
+        font-size: 175px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        color: rgba(0, 0, 0, 0.03);
+        transition: .4s;
+        line-height: 0;
+    }
+    &:hover {
+        transform: translateX(5px);
+        background: $template_color;
+
+        .client-title {
+            h4, h5 {
+                color: #ffffff;
+            }
+        }
+        p {
+            color: #ffffff;
+        }
+        span {
+            color: rgba(255, 255, 255, 0.2);
+        }
+    }
+}
+
+/*
+==============================
+Blog Area CSS
+==============================
+*/
+.single-blog-item {
+	position: relative;
+	padding: 30px;
+	border: 1px solid #000000;
+	overflow: hidden;
+	background-size: cover;
+	background-position: center center;
+    background-repeat: no-repeat;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: #000000;
+        transition: .4s;
+    }
+    span, p, h4 {
+        position: relative;
+        transition: .4s;
+    }
+    span {
+        color: #dddddd;
+    }
+    h4 {
+        margin: {
+            top: 15px;
+            bottom: 15px;
+        }
+        line-height: 1.5;
+        font: {
+            size: 20px;
+            weight: 500;
+        }
+
+        a {
+            &:hover {
+                color: $template_color !important;
+            }
+        }
+    }
+    .link-btn {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 45px;
+        height: 40px;
+        line-height: 44px;
+        text-align: center;
+        box-shadow: 0px 0px 25px 0px rgba(0, 27, 103, 0.3);
+        border-radius: 50% 0 0 0;
+    }
+    &:hover {
+        &::before {
+            background: #000000;
+            opacity: .66;
+        }
+        span, p, h4 a {
+            color: #ffffff;
+        }
+        .link-btn {
+            background: $template_color;
+            color: #ffffff;
+        }
+    }
+}
+
+/*
+==============================
+Partner Area CSS
+==============================
+*/
+.partner-area {
+    text-align: center;
+
+    .owl-carousel {
+        .owl-item {
+            img {
+                width: 140px;
+            }
+        }
+    }
+}
+
+/*
+==============================
+Subscribe Area CSS
+==============================
+*/
+.subscribe-area {
+	background-image: url(../../assets/img/pattern.png);
+	text-align: center;
+	background-position: center;
+	background-size: contain;
+	background-repeat: repeat;
+	background-attachment: fixed;
+}
+.newsletter {
+	max-width: 750px;
+    margin: {
+        left: auto;
+        right: auto;
+    }
+	box-shadow: 0 0 30px 0 rgba(67, 67, 67, 0.15);
+	background: #0F0F0F;
+	padding: 35px;
+    border-radius: 5px;
+    
+    h4 {
+        text-transform: capitalize;
+        margin-bottom: 30px;
+        font-size: 30px;
+    }
+    form {
+        position: relative;
+        .form-control {
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+            border: none;
+            height: 75px;
+            border-radius: 50px;
+            padding-left: 20px;
+            font-size: 17px;
+        }
+        .btn {
+            position: absolute;
+            right: 7px;
+            top: 8px;
+            height: 60px;
+            width: 175px;
+        }
+        .validation-danger {
+            margin-top: 20px;
+            color: red;
+        }
+        .validation-success {
+            margin-top: 20px;
+        }
+    }
+}
+
+/*
+==============================
+Contact Area CSS
+==============================
+*/
+#map {
+	width: 100%;
+	height: 400px;
+}
+.contact-info {
+	box-shadow: 0 0 30px 0 rgba(67, 67, 67, 0.15);
+	background: #0F0F0F;
+	padding: 30px;
+    border: {
+        top: 3px solid $template_color;
+        bottom: 3px solid $template_color;
+    }
+    ul {
+        li {
+            position: relative;
+            padding-left: 60px;
+            font-size: 16px;
+            margin-bottom: 34px;
+            color: #ffffff;
+            &:last-child {
+                margin-bottom: 0;
+            }
+            i {
+                position: absolute;
+                left: 0;
+                top: -11px;
+                color: $template_color;
+                font-size: 19px;
+                background: #f6f6f6;
+                width: 45px;
+                height: 45px;
+                line-height: 45px;
+                text-align: center;
+                border-radius: 50%;
+            }
+        }
+    }
+    .follow-us {
+        text-align: right;
+        margin-top: 40px;
+        li {
+            padding-left: 0;
+            display: inline-block;
+            margin-bottom: 0;
+
+            &:first-child {
+                font: {
+                    size: 18px;
+                    weight: 400;
+                }
+                margin-right: 5px;
+            }
+            a {
+                width: 35px;
+                height: 35px;
+                text-align: center;
+                line-height: 35px;
+                border: 1px solid #000000;
+                border-radius: 50%;
+                &:hover, &:focus {
+                    background: $template_color;
+                    color: #ffffff;
+                    border-color: $template_color;
+                }
+            }
+        }
+    }
+}
+.contact-form {
+	box-shadow: 0 0 30px 0 rgba(67, 67, 67, 0.15);
+	padding: 40px 30px;
+    border: {
+        top: 3px solid $template_color;
+        bottom: 3px solid $template_color;
+    }
+    background: #0F0F0F;
+    h4 {
+        color: $template_color;
+        margin-bottom: 25px;
+        font-size: 22px;
+    }
+    .list-unstyled {
+        li {
+            color: red;
+        }
+    }
+    .form-control {
+        border-radius: 30px;
+        border-color: #222222;
+        background: #222222;
+    }
+    label {
+        color: #fff;
+    }
+    .btn {
+        margin-top: 20px;
+    }
+    #message {
+        height: auto;
+        padding: 15px;
+    }
+}
+
+/*
+==============================
+Page Title CSS
+==============================
+*/
+.page-title {
+	height: 550px;
+	position: relative;
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	overflow: hidden;
+    text-align: center;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: #000000;
+        opacity: .6;
+    }
+    h1 {
+        margin: {
+            bottom: 35px;
+            top: 65px;
+        }
+        color: #ffffff;
+        font: {
+            size: 45px;
+            weight: 600;
+        }
+    }
+    ul {
+        li {
+            display: inline-block;
+            margin: 0 3px;
+            color: #ffffff;
+            text-transform: uppercase;
+            font-weight: 500;
+            &.active {
+                color: #cccccc;
+            }
+            a {
+                color: #ffffff;
+                &:hover {
+                    color: $template_color;
+                }
+            }
+        }
+    }
+}
+
+/*
+==============================
+Blog Details Area CSS
+==============================
+*/
+.blog-details-area {
+	background: #222222;
+    
+    .title {
+        margin: {
+            top: 30px;
+            bottom: 30px;
+        }
+        font-size: 27px;
+    }
+}
+.blog-details {
+    box-shadow: 0 5px 10px rgba(0,9,128,0.035),0 7px 18px rgba(0,9,128,0.05);
+    background: #0F0F0F;
+
+    .article-img {
+        position: relative;
+
+        .date {
+            position: absolute;
+            bottom: 15px;
+            width: 100px;
+            left: 15px;
+            height: 100px;
+            text-align: center;
+            font: {
+                size: 25px;
+                style: italic;
+            }
+            background: $template_color;
+            color: #ffffff;
+            border-radius: 5px;
+            padding-top: 19px;
+            line-height: 32px;
+        }
+    }
+    .article-text {
+        padding: 30px;
+
+        ul {
+            li {
+                display: inline-block;
+            }
+        }
+        .category {
+            a {
+                background: $template_color;
+                color: #ffffff;
+                padding: 3px 15px;
+                display: inline-block;
+                border-radius: 3px;
+                font-weight: 400;
+            }
+        }
+        p {
+            margin-bottom: 20px;
+        }
+        .blockquote {
+            margin: {
+                bottom: 25px;
+                top: 25px;
+            }
+            background: #222222;
+            padding: 30px;
+            font-size: 17px;
+            border-left: 4px solid $template_color;
+
+            p {
+                color: #dddddd;
+            }
+        }
+        .author-share {
+            margin-top: 40px;
+
+            .social-share {
+                text-align: right;
+                margin-top: 28px;
+
+                a {
+                    background: $template_color;
+                    color: #ffffff;
+                    width: 35px;
+                    display: inline-block;
+                    height: 35px;
+                    text-align: center;
+                    line-height: 35px;
+                    border-radius: 50%;
+                }
+            }
+        }
+        .article-author {
+            overflow: hidden;
+
+            .author-img {
+                float: left;
+                width: 27%;
+
+                img {
+                    border-radius: 50%;
+                    max-width: 100%;
+                    width: auto !important;
+                }
+            }
+            .author-title {
+                float: left;
+                width: 73%;
+                padding-left: 25px;
+                margin-top: 17px;
+                h4 {
+                    font-size: 20px;
+                    margin-bottom: 6px;
+                    text-transform: uppercase;
+                }
+                span {
+                    color: #666666;
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+}
+.post-controls-buttons {
+    margin: {
+        top: 50px;
+        bottom: 50px;
+    }
+    padding: {
+        left: 70px;
+        right: 70px;
+    }
+
+    div {
+        display: inline-block;
+        a {
+            box-shadow: 0 5px 10px rgba(0,9,128,0.035),0 7px 18px rgba(0,9,128,0.05);
+            padding: 10px 20px;
+            border-radius: 5px;
+            background: #0F0F0F;
+            color: $template_color;
+            &:hover {
+                background: $template_color;
+                color: #ffffff;
+            }
+        }
+    }
+    .controls-right {
+        float: right;
+    }
+}
+.post-comments {
+    .single-comment {
+        box-shadow: 0 5px 10px rgba(0,9,128,0.035),0 7px 18px rgba(0,9,128,0.05);
+        padding: 25px;
+        margin-bottom: 25px;
+        position: relative;
+        overflow: hidden;
+        background: #0F0F0F;
+
+        &.left-m {
+            margin-left: 30px;
+        }
+        .comment-img {
+            float: left;
+            width: 13%;
+            img {
+                border-radius: 50%;
+            }
+        }
+        .comment-content {
+            float: left;
+            width: 87%;
+            padding-left: 25px;
+            h4 {
+                font-size: 20px;
+                text-transform: uppercase;
+                margin-bottom: 15px;
+            }
+            span {
+                color: #dddddd;
+            }
+            p {
+                margin-bottom: 15px;
+            }
+            a {
+                position: absolute;
+                right: 25px;
+                bottom: 25px;
+                color: $template_color;
+                text-transform: uppercase;
+                font-size: 17px;
+            }
+        }
+    }
+}
+.leave-a-reply {
+	box-shadow: 0 5px 10px rgba(0,9,128,0.035),0 7px 18px rgba(0,9,128,0.05);
+	padding: 25px;
+	background: #0F0F0F;
+    margin-top: 50px;
+    
+    .form-control {
+        background: #222222;
+        color: #ffffff;
+        border: none;
+    }
+    .btn {
+        margin-top: 0px;
+    }
+}
+
+/*
+==============================
+Footer Area CSS
+==============================
+*/
+.footer-area {
+	text-align: center;
+	padding: 50px 0;
+    background: #111111;
+    
+    h4 {
+        line-height: 22px;
+        margin-bottom: 30px;
+
+        a {
+            color: #ffffff;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 35px;
+        }
+        span {
+            color: $template_color;
+            font: {
+                size: 40px;
+                weight: 700;
+            }
+            text-transform: lowercase;
+        }
+    }
+    ul {
+        li {
+            display: inline-block;
+
+            a {
+                width: 35px;
+                height: 35px;
+                text-align: center;
+                line-height: 34px;
+                border: 1px solid #ffffff;
+                border-radius: 50%;
+                color: #ffffff;
+                font-size: 15px;
+
+                &:hover, &:focus {
+                    background: $template_color;
+                    color: #ffffff;
+                    border-color: $template_color;
+                }
+            }
+        }
+    }
+    p {
+        line-height: 1;
+        margin-top: 30px;
+        color: #dddddd;
+    }
+}
+/*
+==============================
+Go Top CSS
+==============================
+*/
+.go-top {
+	position: fixed;
+	cursor: pointer;
+	bottom: 30px;
+	right: 20px;
+	font-size: 25px;
+	color: #ffffff;
+	background-color: #000000;
+	z-index: 1;
+	display: none;
+	width: 40px;
+	text-align: center;
+	height: 40px;
+	line-height: 39px;
+	border-radius: 50%;
+    transition: .4s;
+    &:hover {
+        color: #ffffff;
+        background: $template_color;
+    }
+}

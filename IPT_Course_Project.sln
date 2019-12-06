@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.852
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IPT_Course_Project", "IPT_Course_Project\IPT_Course_Project.csproj", "{2D53B4E4-B5AD-4FD8-8034-74046FD6A113}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Website", "Website\Website.csproj", "{A2BF5BB2-2F1A-46B1-B717-C1E12B45B0CD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2D53B4E4-B5AD-4FD8-8034-74046FD6A113}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D53B4E4-B5AD-4FD8-8034-74046FD6A113}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D53B4E4-B5AD-4FD8-8034-74046FD6A113}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D53B4E4-B5AD-4FD8-8034-74046FD6A113}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2BF5BB2-2F1A-46B1-B717-C1E12B45B0CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2BF5BB2-2F1A-46B1-B717-C1E12B45B0CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2BF5BB2-2F1A-46B1-B717-C1E12B45B0CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2BF5BB2-2F1A-46B1-B717-C1E12B45B0CD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C25F4191-093D-4E9F-9003-F28E835DA7EE}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://dev.azure.com/umerhasan2010
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = IPT_Course_Project\\IPT_Course_Project.csproj
+		SccProjectName1 = IPT_Course_Project
+		SccLocalPath1 = IPT_Course_Project
+		SccProjectUniqueName2 = Website\\Website.csproj
+		SccProjectName2 = Website
+		SccLocalPath2 = Website
+	EndGlobalSection
+EndGlobal

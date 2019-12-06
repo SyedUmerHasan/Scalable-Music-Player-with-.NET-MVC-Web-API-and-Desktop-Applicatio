@@ -1,0 +1,94 @@
+﻿@model Website.Models.Genre
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="app-content content">
+    <div class="content-wrapper">
+        <div class="content-header row">
+            <div class="content-header-left col-md-6 col-12 mb-2 breadcrumb-new">
+                <h3 class="content-header-title mb-0 d-inline-block">About Details</h3>
+                <div class="row breadcrumbs-top d-inline-block">
+                    <div class="breadcrumb-wrapper col-12">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="#">Dashboard</a>
+                            </li>
+                            <li class="breadcrumb-item">
+                                <a href="#">Create, Read & Delete</a>
+                            </li>
+                            <li class="breadcrumb-item active">
+                                About Details
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content-body">
+            <!--Grid options-->
+            <section id="grid-options" class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">About Details</h4>
+                            <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-body">
+
+                                @using (Html.BeginForm("Edit", "Genres", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                                {
+                                    @Html.AntiForgeryToken()
+
+                                    <div class="form-horizontal">
+                                        <h4>Genre</h4>
+                                        <hr />
+                                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                        @Html.HiddenFor(model => model.Genre_Id)
+
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.Genre_Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            <div class="col-md-10">
+                                                @Html.EditorFor(model => model.Genre_Name, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.Genre_Name, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.Genre_Image, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            <div class="col-md-8">
+                                                <div style="display:none;">
+                                                    @Html.EditorFor(model => model.Genre_Image, new { htmlAttributes = new { @class = "form-control" } })
+                                                </div>
+                                                <input type="file" class="form-control" name="ImageFile" required="" accept="image/png, .jpeg, .jpg, image/gif" />
+
+                                                @Html.ValidationMessageFor(model => model.Genre_Image, "", new { @class = "text-danger" })
+                                            </div>
+                                            <div class="col-md-4">
+                                                <img src="@Url.Content(Model.Genre_Image)" width="200" />
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="col-md-offset-2 col-md-10">
+                                                <input type="submit" value="Save" class="btn btn-default" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--Auto-layout columns-->
+
+
+        </div>
+    </div>
+</div>
+
